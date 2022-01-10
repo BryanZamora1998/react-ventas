@@ -29,26 +29,37 @@ export default function App() {
 
     return (
       <Router>
-          <nav className="navbar navbar-expand-lg navbar-light bg-light">
-            <Link className="navbar-brand" to={`${match.path}`} >MocaSystem</Link>
-            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span className="navbar-toggler-icon"></span>
-            </button>
-
-            <div className="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul className="navbar-nav mr-autob w-100">
-                <li className="nav-item active">
-                  <Link className="nav-link" to={`${match.path}`}>Home <span className="sr-only">(current)</span></Link>
+          
+          <nav className="sidebar">
+            <div className="text">Side menu</div>
+              <ul>
+                <li><a href="#">Dasboard</a></li>
+                <li>
+                  <a href="#">Feacture
+                    <span className="fas fa-caret-down"></span>
+                  </a>
+                   <ul>
+                     <li><a href="#">Page</a></li>
+                     <li><a href="#">Elements</a></li>
+                  </ul>
                 </li>
-                <li className="nav-item">
-                  <Link className="nav-link" to={`${match.path}/seguridad`}>Seguridad</Link>
+                <li>
+                  <a href="#">Service
+                  <span className="fas fa-caret-down"></span>
+                  </a>
+                   <ul>
+                     <li><a href="#">Disagner</a></li>
+                     <li><a href="#">web designe</a></li>
+                  </ul>
                 </li>
-                <li className="nav-item w-100">
-                <button className="nav-link float-right mr-25" onClick={redirigirLogin}>Cerra sesion</button>
-                </li>
+                 <li><a href="#">Portafolio</a></li>
+                 <li><a href="#">Overview</a></li>
+                 <li><a href="#">Shortcuts</a></li>
+                 <li><a href="#">Feedback</a></li>
               </ul>
-            </div>
           </nav>
+
+         
 
           <Switch>
               <RoutePrivate exact path={`${match.path}`} component={Seguridad}></RoutePrivate>
